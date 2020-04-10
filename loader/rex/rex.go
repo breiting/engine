@@ -138,12 +138,12 @@ func CreateNode(rex *rexfile.File, name string) (*core.Node, error) {
 
 	// Convert G3N geometries for all REX pointlists
 	for _, pointList := range rex.PointLists {
-		pointGeometries[pointList.ID] = rg.NewPointGeometry(pointList)
+		pointGeometries[pointList.ID] = NewPointGeometry(pointList)
 	}
 
 	// Convert G3N geometries for all REX tracks
 	for _, track := range rex.Tracks {
-		trackGeometries[track.ID] = rg.NewTrackGeometry(track)
+		trackGeometries[track.ID] = NewTrackGeometry(track)
 	}
 
 	// Check if REX scenenodes are available, if yes take those, otherwise use old structure
