@@ -44,6 +44,13 @@ func NewDecoder(rexFile string) (*Decoder, error) {
 	return &Decoder{r: r}, nil
 }
 
+// NewDecoderReader creates a decoder with a reader
+func NewDecoderReader(r io.Reader) *Decoder {
+	return &Decoder{
+		r: r,
+	}
+}
+
 // vertexNormal is used to calculate smooth normals
 type vertexNormal struct {
 	normals []math32.Vector3
